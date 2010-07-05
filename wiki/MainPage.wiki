@@ -1,0 +1,26 @@
+#summary Trang giới thiệu tổng quan về FCollab
+#labels Featured
+
+= Giới thiệu =
+
+*FCollab* viết tắt của _Solution for *F*reelance with *Collab*oration_, tạm dịch là _Giải pháp cho việc làm tự do có cộng tác_.
+
+*FCollab* được viết là một module bổ sung trong Drupal, nhằm phục vụ cho các trang web việc làm tự do. *FCollab* được đặt dưới giấy phép GNU GPL v2, theo đó thì:
+  * Bạn được tự do sử dụng, chỉnh sửa và phân phối dưới bất cứ hình thức nào.
+  * Nếu bạn chỉnh sửa, bạn phải ghi rõ những phần được chỉnh sửa trong mã nguồn, để người khác cũng có thể chỉnh sửa giống như bạn.
+  * Bạn phải ghi công bắt buộc *FCollab* với kích thước dễ nhìn trên sản phẩm và trong mã nguồn.
+
+= Sơ lược về ý tưởng =
+
+== Các định nghĩa ==
+  # *Nghề tự do (freelance):* Là việc bạn có thể làm để kiếm tiền mà không cần đến công ty, chỉ cần bắt đầu thông qua thỏa thuận nào đó. Bạn có thể quen một người nào đó, họ giao việc cho bạn, bạn làm và họ trả tiền cho bạn. Công việc này chỉ được đảm bảo khi bạn và người giao việc tin tưởng lẫn nhau, rằng bạn sẽ không lấy tiền mà không làm gì cho họ cả, và họ không “trốn nợ” bạn sau khi nhận sản phẩm công việc từ bạn.
+  # *Người làm nghề tự do (freelancer):* Là những người làm việc tự do, vốn không chịu áp lực vì thường xuyên phải đến công ty. Bạn có thể vừa đi du lịch vừa làm việc, miễn là thỏa mãn kết quả công việc với người giao việc. Tuy nhiên, nhiều người đã có công việc ổn định (ở công ty) cũng muốn kiếm thêm thông qua việc làm thêm, định nghĩa này cũng bao gồm những người này.
+  # *Trang web tìm việc:* Là các trang cho phép một người đăng các công việc lên để tìm người làm, người khác sẽ tìm công việc để họ nhận làm. Các trang này thường có 2 nhóm người: Người đăng tin hoặc người tuyển dụng, và người tìm việc hoặc ứng viên. Các công việc ở đây có đủ mọi kiểu, nhưng đa số vẫn là đăng tin tuyển dụng nhân viên vào một công ty nào đó.
+  # *Trang web tìm việc tự do:* Là một trang web tìm việc, nhưng không quá chú tâm vào việc tuyển dụng vào công ty mà chú tâm vào các công việc dành cho những người làm việc tự do. Đối với người đăng tin, họ có thể ghi rõ các yêu cầu của họ dành cho công việc mà mình muốn. Đối với người tìm việc, họ có thể xem chi tiết công việc để xác định họ có thể làm được không trước khi nhận việc. Lợi thế thấy rõ là, người đăng tin có thể tìm được chính xác người đủ năng lực thực hiện công việc của mình, còn người tìm việc có thể làm công việc mà mình thật sự thích.
+
+== Các đặc điểm của trang việc làm tự do ==
+  * Chú tâm vào những công việc tự do có thể làm trực tuyến như: viết chương trình, viết bài quảng cáo sản phẩm, dịch thuật, làm các đoạn quảng cáo, vẽ hình trên máy tính,... Nói chung, những thứ tạo ra sản phẩm có thể số hóa và gửi được thông qua mạng internet.
+  * Yêu cầu đối với người đăng tin (bên A) là phải mô tả thật sự chi tiết công việc, ví dụ như viết chương trình bằng ngôn ngữ C# hay PHP, chạy được chỉ trên Linux hay trên mọi hệ điều hành,... thậm chí, có thể yêu cầu các nút bấm to nhỏ như thế nào. Đồng thời, đưa ra mức giá chấp nhận được
+  * Người tìm việc (bên B) khi tìm thấy công việc mình thích (dựa trên các đặc tả chi tiết), họ cần cố gắng nói rằng họ đủ khả năng làm nó, và nên đưa ra các dẫn chứng để chứng minh họ sẽ làm tốt. Thông thường, người ta liệt kê các trang mà mình đã làm để người đăng tin xem thử. Và đồng thời đưa ra số tiền để mình làm.
+  * Trang web làm trung gian để đảm bảo đôi bên có thể tin tưởng lẫn nhau. Tức Bên A chỉ nhận được sản phẩm sau khi gửi tiền vào trang web, bên B chỉ được nhận tiền sau khi đã đưa sản phẩm hoàn chỉnh lên trang web.
+  * Quy trình làm việc như sau: Bên A đăng tin lên trang web => Bên B tìm được công việc và yêu cầu được làm việc đó => Bên A xem thông tin và chọn bên B thực hiện => Bên A và bên B trao đổi trong quá trình tạo ra sản phẩm => Bên B đưa sản phẩm lên trang web => Bên A đưa tiền vào trang web và sau đó có thể lấy sản phẩm => Bên B nhận tiền từ trang web.
