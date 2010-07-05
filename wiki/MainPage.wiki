@@ -3,7 +3,7 @@
 
 = Giới thiệu =
 
-*FCollab* viết tắt của _Solution for *F*reelance with *Collab*oration_, tạm dịch là _Giải pháp cho việc làm tự do có cộng tác_.
+*FCollab* viết tắt của _Solution for <b>F</b>reelance with <b>Collab</b>oration_, tạm dịch là _Giải pháp cho việc làm tự do có cộng tác_.
 
 *FCollab* được viết là một module bổ sung trong Drupal, nhằm phục vụ cho các trang web việc làm tự do. *FCollab* được đặt dưới giấy phép GNU GPL v2, theo đó thì:
   * Bạn được tự do sử dụng, chỉnh sửa và phân phối dưới bất cứ hình thức nào.
