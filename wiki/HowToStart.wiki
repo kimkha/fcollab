@@ -4,12 +4,12 @@
 == Trước khi bắt đầu ==
 
 Việc đầu tiên của bạn là có một nơi để chạy ứng dụng PHP. Bạn có 2 lựa chọn:
-  * Cài đặt trên mạng với một hosting nào đó hỗ trợ PHP và MySQL. Có rất nhiều hosting miễn phí cho bạn.
+  * Cài đặt trên mạng với một hosting nào đó hỗ trợ [http://php.net/index.php PHP] và [http://www.mysql.com/ MySQL]. Có rất nhiều hosting miễn phí cho bạn.
   * Cài đặt trên máy tính của bạn như là một hosting nội bộ. Bạn có thể sử dụng [http://www.apachefriends.org/en/xampp.html XAMPP], [http://www.wampserver.com/en/ WAMPServer], [http://vertrigo.sourceforge.net/ VertrigoServ],...
 
 Tiếp theo, bạn phải tải về phiên bản Drupal 6.x mới nhất tại http://drupal.org/, và cài đặt nó lên hosting của mình.
 
-Bạn cũng cần cài đặt một SVN Client để lấy mã nguồn đang phát triển của chúng tôi về máy của bạn. Một trong những SVN Client được khuyến khích là TortoiseSVN. Tuy nhiên, nếu bạn cần phiên bản ổn định của chúng tôi, bạn hãy đợi và tải về trong trang [https://code.google.com/p/fcollab/downloads/list Download].
+Bạn cũng cần cài đặt một SVN Client để lấy mã nguồn đang phát triển của chúng tôi về máy của bạn. Một trong những SVN Client được khuyến khích là [http://tortoisesvn.tigris.org/ TortoiseSVN]. Tuy nhiên, nếu bạn cần phiên bản ổn định của chúng tôi, bạn hãy đợi và tải về trong trang [https://code.google.com/p/fcollab/downloads/list Download].
 
 Nhiều người làm việc này khá thành thạo rồi. Nếu bạn chưa rành thì cũng đừng lo, vì việc này thật sự dễ dàng và bạn có thể tìm thấy các hướng dẫn trên mạng (rất nhiều).
 
