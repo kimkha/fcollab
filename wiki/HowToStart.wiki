@@ -1,0 +1,35 @@
+#summary Làm sao bắt đầu sử dụng và phát triển FCollab
+#labels Phase-Deploy
+
+== Trước khi bắt đầu ==
+
+Việc đầu tiên của bạn là có một nơi để chạy ứng dụng PHP. Bạn có 2 lựa chọn:
+  * Cài đặt trên mạng với một hosting nào đó hỗ trợ PHP và MySQL. Có rất nhiều hosting miễn phí cho bạn.
+  * Cài đặt trên máy tính của bạn như là một hosting nội bộ. Bạn có thể sử dụng XAMPP, WAMPServer, `*`VertrigoServ,...
+
+Tiếp theo, bạn phải tải về phiên bản Drupal 6.x mới nhất tại http://drupal.org/, và cài đặt nó lên hosting của mình.
+
+Bạn cũng cần cài đặt một SVN Client để lấy mã nguồn đang phát triển của chúng tôi về máy của bạn. Một trong những SVN Client được khuyến khích là TortoiseSVN. Tuy nhiên, nếu bạn cần phiên bản ổn định của chúng tôi, bạn hãy đợi và tải về trong trang [https://code.google.com/p/fcollab/downloads/list Download].
+
+Nhiều người làm việc này khá thành thạo rồi. Nếu bạn chưa rành thì cũng đừng lo, vì việc này thật sự dễ dàng và bạn có thể tìm thấy các hướng dẫn trên mạng (rất nhiều).
+
+== Bắt đầu sử dụng ==
+
+Bạn cần phải tải mã nguồn của chúng tôi vào `<thư_mục_cài_đặt_Drupal>/sites/all/modules` bằng cách:
+  # Giải nén tập tin tải về vào thư mục này
+  # Check out từ SVN của chúng tôi vào thư mục này
+*Note:* Nếu thư mục này không tồn tại, bạn hãy tại nó.
+
+Bạn vào trang web Drupal của bạn (ví dụ: `http://localhost/drupal/`). Vào mục Admin -> Site Building -> Modules, và bật các module trong nhóm FCollab.
+
+Và bây giờ bạn có thể tận hưởng nó.
+
+== Cập nhật ==
+
+Nếu không có thông báo gì đặc biệt, bạn có thể sử dụng SVN để cập nhật bản mới nhất, hoặc chép đè phiên bản mới nhất lên thư mục tương ứng.
+
+Nếu chúng tôi yêu cầu bạn phải *cài lại FCollab*, bạn hãy theo các bước sau để gỡ bỏ và cài đặt lại. _(Chân thành xin lỗi các bạn về sự bất tiện này, đang có những nỗ lực của cộng đồng Drupal để cho bước này được dễ dàng hơn, và bạn cũng có thể giúp họ)_
+  # Vào mục Admin -> Site Building -> Modules, tắt các module của FCollab (bạn phải tắt từng cái một)
+  # Chép phiên bản mới nhất vào thư mục tương ứng
+  # Vào mục Admin -> Site Building -> Modules, bật lại các module của FCollab.
+  # Tiếp tục tận hướng trang web của chính mình.
