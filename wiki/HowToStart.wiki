@@ -5,7 +5,7 @@
 
 Việc đầu tiên của bạn là có một nơi để chạy ứng dụng PHP. Bạn có 2 lựa chọn:
   * Cài đặt trên mạng với một hosting nào đó hỗ trợ PHP và MySQL. Có rất nhiều hosting miễn phí cho bạn.
-  * Cài đặt trên máy tính của bạn như là một hosting nội bộ. Bạn có thể sử dụng XAMPP, WAMPServer, `*`VertrigoServ,...
+  * Cài đặt trên máy tính của bạn như là một hosting nội bộ. Bạn có thể sử dụng [http://www.apachefriends.org/en/xampp.html XAMPP], [http://www.wampserver.com/en/ WAMPServer], [http://vertrigo.sourceforge.net/ VertrigoServ],...
 
 Tiếp theo, bạn phải tải về phiên bản Drupal 6.x mới nhất tại http://drupal.org/, và cài đặt nó lên hosting của mình.
 
