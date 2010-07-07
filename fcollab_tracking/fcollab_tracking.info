@@ -1,0 +1,5 @@
+name = Issue Tracking
+description = Issue Tracking for Freelance with Collaboration
+package = FCollab
+version = VERSION
+core = 6.x

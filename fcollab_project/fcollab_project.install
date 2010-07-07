@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implementation of hook_install().
+ */
+function fcollab_project_install() {
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function fcollab_project_uninstall() {
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function fcollab_project_schema() {
+  return null;
+}
