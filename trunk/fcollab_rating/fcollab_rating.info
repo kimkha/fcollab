@@ -1,5 +1,5 @@
 name = Rating
 description = Peer-rating for Freelance with Collaboration
 package = FCollab
-version = VERSION
+version = 6.x-0.1
 core = 6.x
