@@ -1,5 +1,6 @@
 name = Requirements
 description = Requirements for Freelance with Collaboration
-package = FCollab
+package = FCollab - Project
+dependencies[] = fcollab_project
 version = 6.x-0.1
 core = 6.x
