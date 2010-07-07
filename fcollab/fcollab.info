@@ -1,0 +1,5 @@
+name = FCollab
+description = Define variables and roles for Freelance with Collaboration
+package = FCollab
+version = 6.x-0.1
+core = 6.x

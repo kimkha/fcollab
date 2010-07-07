@@ -1,5 +1,6 @@
 name = Analyzer
 description = Analyzer and Diagram for Freelance with Collaboration
-package = FCollab
+package = FCollab - Collaboration
+dependencies[] = fcollab_tracking
 version = 6.x-0.1
 core = 6.x

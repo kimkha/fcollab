@@ -1,5 +1,6 @@
 name = Bank
 description = Internal Bank for Freelance with Collaboration
-package = FCollab
+package = FCollab - Payment
+dependencies[] = fcollab
 version = 6.x-0.1
 core = 6.x

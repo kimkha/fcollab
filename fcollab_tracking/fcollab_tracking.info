@@ -1,5 +1,6 @@
 name = Issue Tracking
 description = Issue Tracking for Freelance with Collaboration
 package = FCollab
+dependencies[] = fcollab
 version = 6.x-0.1
 core = 6.x
