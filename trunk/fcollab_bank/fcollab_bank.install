@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implementation of hook_install().
+ */
+function fcollab_bank_install() {
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function fcollab_bank_uninstall() {
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function fcollab_bank_schema() {
+  return null;
+}

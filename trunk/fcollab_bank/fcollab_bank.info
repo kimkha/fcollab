@@ -1,0 +1,5 @@
+name = Bank
+description = Internal Bank for Freelance with Collaboration
+package = FCollab
+version = VERSION
+core = 6.x
