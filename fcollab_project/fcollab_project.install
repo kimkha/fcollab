@@ -3,17 +3,135 @@
  * Implementation of hook_install().
  */
 function fcollab_project_install() {
+  // Create tables.
+  drupal_install_schema('fcollab_project');
 }
 
 /**
  * Implementation of hook_uninstall().
  */
 function fcollab_project_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('fcollab_project');
 }
 
 /**
  * Implementation of hook_schema().
  */
 function fcollab_project_schema() {
-  return null;
+  $schema['fcollab_project'] = array(
+    'description' => 'The base table for projects.',
+    'fields' => array(
+      'pid' => array(
+        'description' => 'The primary identifier for a project.',
+        'type' => 'serial',
+        'not null' => TRUE),
+      'created' => array(
+        'description' => 'The Unix timestamp when the project was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the project was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'title' => array(
+        'description' => 'The title of this project.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''),
+      'brief' => array(
+        'description' => 'The brief description of this project.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+        'default' => ''),
+      'detail' => array(
+        'description' => 'The detail description of this project.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+        'default' => ''),
+      'deadline' => array(
+        'description' => 'The Unix timestamp of this project\'s deadline.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'min_cost' => array(
+        'description' => 'The minimum acceptable cost of this project.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'max_cost' => array(
+        'description' => 'The maximum acceptable cost of this project.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'status' => array(
+        'description' => 'The status of this project.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'size' => 'tiny',
+        'default' => 0),
+      'uid' => array(
+        'description' => 'The {users}.uid that owns this project; initially, this is the user that created it.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      ),
+    'indexes' => array(
+      'project_changed'        => array('changed'),
+      'project_created'        => array('created'),
+      'project_deadline'       => array('deadline'),
+      ),
+    'primary key' => array('pid'),
+  );
+  
+  $schema['fcollab_project_bid'] = array(
+    'description' => 'The bid table for projects\' bid.',
+    'fields' => array(
+      'bid' => array(
+        'description' => 'The primary identifier for a bid of project.',
+        'type' => 'serial',
+        'not null' => TRUE),
+      'created' => array(
+        'description' => 'The Unix timestamp when the bid was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'content' => array(
+        'description' => 'The content of this bid.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+        'default' => ''),
+      'time' => array(
+        'description' => 'The time to finish this project.',
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+        'default' => ''),
+      'cost' => array(
+        'description' => 'The acceptable cost of this project.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'uid' => array(
+        'description' => 'The {users}.uid that owns this bid; initially, this is the user that created it.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      ),
+    'indexes' => array(
+      'bid_created'        => array('created'),
+      'bid_time'       => array('time'),
+      'bid_cost'       => array('cost'),
+      ),
+    'primary key' => array('bid'),
+  );
+  return $schema;
+
 }
