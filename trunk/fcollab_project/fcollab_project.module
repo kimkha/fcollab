@@ -1,5 +1,7 @@
 <?php
 
+include 'fcollab_project.node.inc';
+
 /**
  * Implementation of hook_menu()
  */
@@ -12,6 +14,72 @@ function fcollab_project_menu(){
 		'file' => 'fcollab_project.pages.inc',
 	);
 	return $items;
+}
+
+/**
+ * Implementation of hook_node_info()
+ */
+function fcollab_project_node_info() {
+  return array(
+    'fcollab_project' => array(
+      'name' => t('project'),
+      'module' => 'fcollab_project',
+      'description' => "Project for freelancer, this is posted by employer.",
+      'body_label' => 'Brief description',
+    )
+  );
+}
+
+/**
+* Implementation of hook_perm().
+*/
+function fcollab_project_perm() {
+  return array('create fcollab_project', 'edit own fcollab_project');
+}
+
+/**
+* Implementation of hook_access().
+*/
+function fcollab_project_access($op, $node) {
+  global $user;
+
+  if ($op == 'create') {
+    // Only users with permission to do so may create this node type.
+    return user_access('create fcollab_project');
+  }
+
+  // Users who create a node may edit or delete it later, assuming they have the
+  // necessary permissions.
+  if ($op == 'update' || $op == 'delete') {
+    if (user_access('edit own fcollab_project') && ($user->uid == $node->uid)) {
+      return TRUE;
+    }
+  }
+}
+
+/**
+* Implementation of hook_form().
+*/
+function fcollab_project_form(&$node, $form_state) {
+  $type = node_get_types('type', $node);
+  
+  $form['title'] = array(
+    '#type' => 'textfield',
+    '#title' => check_plain($type->title_label),
+    '#required' => TRUE,
+    '#default_value' => $node->title,
+    '#weight' => -5
+  );
+  
+  $form['body_filter']['body'] = array(
+    '#type' => 'textarea',
+    '#title' => check_plain($type->body_label),
+    '#default_value' => $node->body,
+    '#required' => TRUE
+  );
+  $form['body_filter']['filter'] = filter_form($node->format);
+  
+  return $form;
 }
 
 ?>
