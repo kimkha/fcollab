@@ -58,28 +58,15 @@ function fcollab_project_access($op, $node) {
 }
 
 /**
-* Implementation of hook_form().
+* Implementation of hook_theme().
 */
-function fcollab_project_form(&$node, $form_state) {
-  $type = node_get_types('type', $node);
-  
-  $form['title'] = array(
-    '#type' => 'textfield',
-    '#title' => check_plain($type->title_label),
-    '#required' => TRUE,
-    '#default_value' => $node->title,
-    '#weight' => -5
-  );
-  
-  $form['body_filter']['body'] = array(
-    '#type' => 'textarea',
-    '#title' => check_plain($type->body_label),
-    '#default_value' => $node->body,
-    '#required' => TRUE
-  );
-  $form['body_filter']['filter'] = filter_form($node->format);
-  
-  return $form;
+function fcollab_project_theme() {
+	return array(
+		'fcollab_project_cost_info' => array(
+			'arguments' => array('node'),
+		),
+	);
 }
+
 
 ?>
