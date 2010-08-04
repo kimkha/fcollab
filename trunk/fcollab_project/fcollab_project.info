@@ -2,5 +2,6 @@ name = Project
 description = Project for Freelance with Collaboration
 package = FCollab
 dependencies[] = fcollab
+dependencies[] = comment
 version = 6.x-0.1
 core = 6.x
