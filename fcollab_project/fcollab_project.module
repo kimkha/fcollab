@@ -68,5 +68,27 @@ function fcollab_project_theme() {
 	);
 }
 
+/**
+* Implementation of hook_comment().
+*/
+function fcollab_project_comment(&$a1, $op) {
+	switch ($op) {
+		case 'view':
+			break;
+		case 'insert':
+			break;
+		case 'update':
+			break;
+		case 'delete':
+			break;
+		case 'validate':
+			break;
+		case 'publish':
+			break;
+		case 'unpublish':
+			break;
+	}
+}
+
 
 ?>
