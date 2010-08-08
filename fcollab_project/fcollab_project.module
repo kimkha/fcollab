@@ -1,6 +1,7 @@
 <?php
 
 require_once 'fcollab_project.node.inc';
+require_once 'fcollab_project.bid.inc';
 
 /**
  * Implementation of hook_menu()
@@ -26,7 +27,7 @@ function fcollab_project_node_info() {
       'module' => 'fcollab_project',
       'description' => "Project for freelancer, this is posted by employer.",
       'body_label' => 'Brief description',
-    )
+    ),
   );
 }
 
@@ -65,30 +66,10 @@ function fcollab_project_theme() {
 		'fcollab_project_cost_info' => array(
 			'arguments' => array('node'),
 		),
+		'fcollab_project_view_bid' => array(
+			'arguments' => array('node'),
+		),
 	);
 }
-
-/**
-* Implementation of hook_comment().
-*/
-function fcollab_project_comment(&$a1, $op) {
-	switch ($op) {
-		case 'view':
-			break;
-		case 'insert':
-			break;
-		case 'update':
-			break;
-		case 'delete':
-			break;
-		case 'validate':
-			break;
-		case 'publish':
-			break;
-		case 'unpublish':
-			break;
-	}
-}
-
 
 ?>

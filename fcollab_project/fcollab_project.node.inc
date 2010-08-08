@@ -60,9 +60,9 @@ function fcollab_project_validate($node, &$form) {
   if (!is_numeric($node->max_cost)) {
   	form_set_error('max_cost', t('Maximum cost must be a number.'));
   	
-  } else if ($node->min_cost < 0) {
+  } else if ($node->max_cost < 0) {
 		form_set_error('max_cost', t('Maximum cost must be greater than 0.'));
-	} else if ($check_cost && $node->min_cost > $node->max_cost) {
+	} else if ($check_cost && $node->max_cost > 0 && $node->min_cost > $node->max_cost) {
 		form_set_error('max_cost', t('Maximum cost must be greater than minimum cost.'));
 		form_set_error('min_cost', t('Maximum cost must be greater than minimum cost.'));
 		array_pop($_SESSION['messages']['error']);
@@ -86,6 +86,10 @@ function fcollab_project_view($node, $teaser = FALSE, $page = FALSE) {
   $node->content['cost'] = array(
     '#value' => theme('fcollab_project_cost_info', $node),
     '#weight' => 1,
+  );
+  $node->content['bid'] = array(
+    '#value' => theme('fcollab_project_view_bid', $node),
+    '#weight' => 10,
   );
   /**/
   //print_r($node);
