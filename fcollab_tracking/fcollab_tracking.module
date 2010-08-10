@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implementation of hook_node_info()
+ */
+function fcollab_tracking_node_info() {
+  return array(
+    'fcollab_project' => array(
+      'name' => t('issue'),
+      'module' => 'fcollab_tracking',
+      'description' => "Issue for each project, it helps owner controls the progress well.",
+      'body_label' => 'Content',
+    ),
+  );
+}
+
+?>
