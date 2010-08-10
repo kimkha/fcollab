@@ -50,7 +50,6 @@ function fcollab_project_bid_schema() {
       ),
 		),
     'indexes' => array(
-      'bid_created'  => array('created'),
       'bid_time'     => array('time'),
       'bid_cost'     => array('cost'),
       ),
