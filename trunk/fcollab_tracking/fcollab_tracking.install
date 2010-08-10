@@ -3,17 +3,61 @@
  * Implementation of hook_install().
  */
 function fcollab_tracking_install() {
+  // Create tables.
+  drupal_install_schema('fcollab_tracking');
 }
 
 /**
  * Implementation of hook_uninstall().
  */
 function fcollab_tracking_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('fcollab_tracking');
 }
 
 /**
  * Implementation of hook_schema().
  */
 function fcollab_tracking_schema() {
-  return null;
+  $schema['fcollab_tracking'] = array(
+    'description' => 'The base table for issue tracking.',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'The primary identifier for a task.',
+        'type' => 'int',
+        'not null' => TRUE),
+      'vid' => array(
+        'description' => 'The primary identifier for a task.',
+        'type' => 'int',
+        'not null' => TRUE),
+      'pid' => array(
+        'description' => 'The project ID for this task.',
+        'type' => 'int',
+        'not null' => TRUE),
+      'before' => array(
+        'description' => 'Some before tasks of this task.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''),
+      'deadline' => array(
+        'description' => 'The Unix timestamp of this task\'s deadline.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0),
+      'tstatus' => array(
+        'description' => 'The status of this task.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'size' => 'tiny',
+        'default' => 0),
+      ),
+    'indexes' => array(
+      'task_deadline'       => array('deadline'),
+      ),
+    'primary key' => array('nid', 'vid'),
+  );
+  
+  return $schema;
 }

@@ -1,0 +1,84 @@
+<?php
+/**
+ * Implementation of hook_install().
+ */
+function fcollab_project_bid_install() {
+  // Create tables.
+  drupal_install_schema('fcollab_project_bid');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function fcollab_project_bid_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('fcollab_project_bid');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function fcollab_project_bid_schema() {
+  $schema['fcollab_project_bid'] = array(
+    'description' => 'The bid table for projects\' bid.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique bid ID.',
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {node}.nid to which this bid is a reply.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {users}.uid who authored the bid. If set to 0, this bid was created by an anonymous user.',
+      ),
+      'body' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+        'description' => 'The bid body.',
+      ),
+      'time' => array(
+        'description' => 'The time to finish this project.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+			),
+      'cost' => array(
+        'description' => 'The acceptable cost of this project.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+			),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The time that the bid was created, or last edited by its author, as a Unix timestamp.',
+      ),
+      'status' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => 'The status of a bid. Only one bid has status to be 1 (accepted)',
+      ),
+		),
+    'indexes' => array(
+      'bid_created'  => array('created'),
+      'bid_time'     => array('time'),
+      'bid_cost'     => array('cost'),
+      ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+
+}

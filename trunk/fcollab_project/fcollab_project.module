@@ -1,7 +1,6 @@
 <?php
 
 require_once 'fcollab_project.node.inc';
-require_once 'fcollab_project.bid.inc';
 
 /**
  * Implementation of hook_menu()

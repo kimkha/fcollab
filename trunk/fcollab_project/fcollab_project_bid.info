@@ -1,0 +1,6 @@
+name = Project Bid
+description = The bid of project for Freelance with Collaboration. A bid is created by a freelancer when he want to work with a project. 
+package = FCollab - Project
+dependencies[] = fcollab_project
+version = 6.x-0.1
+core = 6.x
