@@ -22,28 +22,11 @@ function fcollab_project_bid_schema() {
   $schema['fcollab_project_bid'] = array(
     'description' => 'The bid table for projects\' bid.',
     'fields' => array(
-      'id' => array(
-        'type' => 'serial',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique bid ID.',
-      ),
-      'nid' => array(
+      'pid' => array(
         'type' => 'int',
         'not null' => TRUE,
         'default' => 0,
-        'description' => 'The {node}.nid to which this bid is a reply.',
-      ),
-      'uid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'description' => 'The {users}.uid who authored the bid. If set to 0, this bid was created by an anonymous user.',
-      ),
-      'body' => array(
-        'type' => 'text',
-        'not null' => TRUE,
-        'size' => 'big',
-        'description' => 'The bid body.',
+        'description' => 'The project ID to which this bid is a reply.',
       ),
       'time' => array(
         'description' => 'The time to finish this project.',
@@ -57,13 +40,7 @@ function fcollab_project_bid_schema() {
         'not null' => TRUE,
         'default' => 0
 			),
-      'created' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'description' => 'The time that the bid was created, or last edited by its author, as a Unix timestamp.',
-      ),
-      'status' => array(
+      'bstatus' => array(
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,

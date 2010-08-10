@@ -65,9 +65,6 @@ function fcollab_project_theme() {
 		'fcollab_project_cost_info' => array(
 			'arguments' => array('node'),
 		),
-		'fcollab_project_view_bid' => array(
-			'arguments' => array('node'),
-		),
 	);
 }
 

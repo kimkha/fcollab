@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Implementation of hook_node_info()
+ */
+function fcollab_project_bid_node_info() {
+  return array(
+    'fcollab_project' => array(
+      'name' => t('project bid'),
+      'module' => 'fcollab_project_bid',
+      'description' => "The bid of project, it is created by freelancer when he want to work.",
+    ),
+  );
+}
+
 function theme_fcollab_project_view_bid($bid) {
 	$output = '<div class="fcollab_project_bid">';
 	$output .= '</div>';
