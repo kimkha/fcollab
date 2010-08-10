@@ -22,8 +22,8 @@ function theme_fcollab_project_view_bid($bid) {
 /**
  * Load bid by bid ID
  */
-function fcollab_project_bid_load($id) {
-	$info = db_fetch_object(db_query('SELECT * FROM {fcollab_project_bid} WHERE id = %d', $id));
+function fcollab_project_bid_load($nid) {
+	$info = db_fetch_object(db_query('SELECT * FROM {fcollab_project_bid} WHERE nid = %d', $nid));
 	return $info;
 }
 
