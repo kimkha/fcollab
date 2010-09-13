@@ -39,8 +39,15 @@ function fcollab_project_bid_update($bid) {
     $bid->body, $bid->time, $bid->status, $bid->id);
 }
 
-function fcollab_project_bid_validate($id) {
-	// TODO: Something
+function fcollab_project_bid_validate($bid, &$form) {
+  if ($bid->time <= 0) {
+  	form_set_error('time', t('Time to finish project must be greater than zero'));
+  }
+  
+  $node = node_load($bid->nid);
+  if ($bid->cost < $node->min_cost || $bid->cost > $node->max_cost) {
+  	form_set_error('cost', t('Your cost must greater than min cost and less than max cost of this project.'));
+  }
 }
 
 function fcollab_project_bid_delete($bid) {
