@@ -13,8 +13,9 @@ function fcollab_project_bid_node_info() {
   );
 }
 
-function theme_fcollab_project_view_bid($bid) {
+function theme_fcollab_project_view_bid($node) {
 	$output = '<div class="fcollab_project_bid">';
+	//$output .= drupal_get_form('fcollab_project_bid');
 	$output .= '</div>';
 	return $output;
 }
@@ -29,14 +30,14 @@ function fcollab_project_bid_load($nid) {
 
 function fcollab_project_bid_insert($bid) {
 	if ($bid->created == '') $bid->created = mktime();
-	db_query("INSERT INTO {fcollab_project_bid} (nid, uid, body, time, cost, created, status)
-    VALUES (%d, %d, '%s', %d, %d, %d, %d)", 
-    $bid->nid, $bid->uid, $bid->body, $bid->time, $bid->cost, $bid->created, $bid->status);
+	db_query("INSERT INTO {fcollab_project_bid} (nid, vid, uid, body, time, cost, created, status)
+    VALUES (%d, %d, %d, '%s', %d, %d, %d, %d)", 
+    $bid->nid, $bid->vid, $bid->uid, $bid->body, $bid->time, $bid->cost, $bid->created, $bid->status);
 }
 
 function fcollab_project_bid_update($bid) {
-	db_query("UPDATE {fcollab_project_bid} SET body = '%s', time = %d, status = %d WHERE id = %d",
-    $bid->body, $bid->time, $bid->status, $bid->id);
+	db_query("UPDATE {fcollab_project_bid} SET body = '%s', time = %d, status = %d WHERE nid = %d AND vid = %d",
+    $bid->body, $bid->time, $bid->status, $bid->nid, $bid->vid);
 }
 
 function fcollab_project_bid_validate($bid, &$form) {
@@ -51,7 +52,28 @@ function fcollab_project_bid_validate($bid, &$form) {
 }
 
 function fcollab_project_bid_delete($bid) {
-	db_query('DELETE FROM {fcollab_project_bid} WHERE id = %d', $bid->id);
+	db_query('DELETE FROM {fcollab_project_bid} WHERE nid = %d', $bid->nid);
+}
+
+/**
+* Implementation of hook_form().
+*/
+function fcollab_project_bid_form(&$bid, $form_state) {
+  $type = node_get_types('type', $bid);
+  
+  $form['nid'] = array(
+		'#type' => 'value',
+		'#value' => $bid->nid,
+	);
+  
+  $form['time'] = array(
+    '#type' => 'date',
+    '#title' => t('Time to finish'),
+    '#default_value' => $bid->time,
+    '#weight' => 1
+  );
+  
+  return $form;
 }
 
 function fcollab_project_bid_view($bid) {

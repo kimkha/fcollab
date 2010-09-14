@@ -22,11 +22,25 @@ function fcollab_project_bid_schema() {
   $schema['fcollab_project_bid'] = array(
     'description' => 'The bid table for projects\' bid.',
     'fields' => array(
+      'nid' => array(
+        'description' => 'The primary identifier for a project.',
+        'type' => 'int',
+        'not null' => TRUE),
+      'vid' => array(
+        'description' => 'The primary identifier for a project.',
+        'type' => 'int',
+        'not null' => TRUE),
       'pid' => array(
         'type' => 'int',
         'not null' => TRUE,
         'default' => 0,
         'description' => 'The project ID to which this bid is a reply.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'User ID who reply this bid.',
       ),
       'time' => array(
         'description' => 'The time to finish this project.',
@@ -49,11 +63,8 @@ function fcollab_project_bid_schema() {
         'description' => 'The status of a bid. Only one bid has status to be 1 (accepted)',
       ),
 		),
-    'indexes' => array(
-      'bid_time'     => array('time'),
-      'bid_cost'     => array('cost'),
-      ),
-    'primary key' => array('id'),
+    'indexes' => array(),
+    'primary key' => array('nid', 'vid'),
   );
   return $schema;
 

@@ -81,7 +81,9 @@ function fcollab_project_view($node, $teaser = FALSE, $page = FALSE) {
     $breadcrumb[] = l($node->field1, 'example/' . $node->field1);
     drupal_set_breadcrumb($breadcrumb);
   }/**/
-
+	
+	//module_load_include('module', 'fcollab_project_bid');
+	
   $node = node_prepare($node, $teaser);
   $node->content['cost'] = array(
     '#value' => theme('fcollab_project_cost_info', $node),
